@@ -1,0 +1,81 @@
+ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 50px;
+  }
+  ul li {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid blue;
+    padding: 5px;
+    width: 300px;
+  }
+  ul li:hover {
+    cursor: pointer;
+  }
+  
+#searchBar {
+  background-color: gainsboro;
+}
+.field {
+  border-radius: 15%;
+  margin: auto;
+  width: 50%;
+}
+.field:hover{
+  
+}
+.field input:hover{
+  cursor: pointer;
+  background-color: darkblue;
+}
+.field input {
+  width: 100%;
+  background-color: rgb(15, 0, 100);
+  color: white;
+  padding: 20px 5px;
+  text-align: center;
+  border: 4px outset purple;
+  border-radius: 5%;
+}
+.field input.field {
+  background-color: powderblue;
+}
+.field input::-webkit-input-placeholder{  
+  color: lime;  
+}
+.field input::-moz-placeholder {
+  color: lime;
+}
+.field input:-ms-input-placeholder {
+  color: lime;
+}
+.field input:-moz-placeholder {
+  color: lime;
+}
+.ng-select {
+  background-color: orchid;
+}
+.ng-select markInput {
+  background-color: orangered;
+}
+.pagination-controls {
+  text-align: center;
+}
+
+#searchDate {
+  width: 60%;
+  margin: auto;
+}
+
+#searchDateFrom {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+#searchDateTo {
+  float: right;
+  width: 20%;
+  text-align: center;
+}

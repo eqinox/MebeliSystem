@@ -1,0 +1,31 @@
+<div id="container">
+  <h3>
+    <span *ngIf='!editMode'>{{order.name}}</span> 
+    <input type="text" *ngIf='editMode' [(ngModel)]='order.name' value="{{order.name}}"/>
+  </h3>
+  <p>
+    <span *ngIf='!editMode'>{{order.phone}}</span> 
+    <input type="text" *ngIf='editMode' [(ngModel)]='order.phone' value="{{order.phone}}"/>
+  </p>
+  <p>Град: 
+    <span *ngIf='!editMode'>{{order.city}}</span> 
+    <input type="text" *ngIf='editMode' [(ngModel)]='order.city' value="{{order.city}}"/>
+  </p>
+  <p>Квартал: 
+    <span *ngIf='!editMode'>{{order.neighborhood}}</span> 
+    <input type="text" *ngIf='editMode' [(ngModel)]='order.neighborhood' value="{{order.neighborhood}}"/>
+  </p>
+  <p>Капаро: 
+    <b>
+      <span *ngIf='!editMode'>{{order.deposit}}</span> 
+      <input type="text" *ngIf='editMode' [(ngModel)]='order.deposit' value="{{order.deposit}}"/>
+    </b>
+  </p>
+  <p>Крайна цена: 
+    <b>
+      <span *ngIf='!editMode'>{{order.finalPrice}}</span>
+      <input type="text" *ngIf='editMode' [(ngModel)]='order.finalPrice' value="{{order.finalPrice}}"/>
+    </b>
+  </p>
+  <button (click)='toggleEditMode()'>промени</button>
+</div>

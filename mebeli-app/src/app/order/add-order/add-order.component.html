@@ -1,0 +1,103 @@
+<div class="container">
+  <h2>Добавяне на поръчка</h2>
+  <form class="form-horizontal" (submit)='onSubmit()' #orderForm='ngForm' method="POST" enctype="multipart/form-data" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Име:</label>
+      <div class="col-sm-10">
+        <input 
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Име"
+        name="name"
+        #name='ngModel'
+        [(ngModel)]='order.name'
+        required>
+        <span class="text-danger" [hidden]='name.valid || name.pristine'>Името е задължително!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="phone">Телефон:</label>
+      <div class="col-sm-10">
+        <input
+        type="text"
+        class="form-control"
+        id="phone"
+        placeholder="Телефон"
+        name="phone"
+        [(ngModel)]='order.phone'>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="city">Град:</label>
+      <div class="col-sm-10">          
+        <input
+        type="text"
+        class="form-control"
+        id="city"
+        placeholder="Град"
+        name="city"
+        #city='ngModel'
+        [(ngModel)]='order.city'
+        required>
+        <span class="text-danger" [hidden]='city.valid || city.pristine'>Градър е задължителен!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="neighborhood">Квартал:</label>
+      <div class="col-sm-10">          
+        <input
+        type="text"
+        class="form-control"
+        id="neighborhood"
+        placeholder="Квартал"
+        name="neighborhood"
+        [(ngModel)]='order.neighborhood'>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="deposit">Капаро:</label>
+      <div class="col-sm-10">          
+        <input
+        type="text"
+        class="form-control"
+        id="deposit"
+        placeholder="Капаро"
+        name="deposit"
+        #deposit='ngModel'
+        [(ngModel)]='order.deposit'
+        required>
+        <span class="text-danger" [hidden]='deposit.valid || deposit.pristine'>Капарото е задължително!</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="finalPrice">Крайна цена:</label>
+      <div class="col-sm-10">          
+        <input
+        type="text"
+        class="form-control"
+        id="finalPrice"
+        placeholder="Крайна цена"
+        name="finalPrice"
+        #finalPrice='ngModel'
+        [(ngModel)]='order.finalPrice'
+        required>
+        <span class="text-danger" [hidden]='finalPrice.valid || finalPrice.pristine'>Крайната цена е задължителна!</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="dateBox">
+          <!-- <label class="control-label col-sm-2" for="date">Дата:</label> -->
+          <!-- <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker> -->
+      </div>      
+    </div>
+    
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-2">
+        <button type="submit" class="btn btn-default" [disabled]='!orderForm.valid'>Добави</button>
+      </div>
+    </div>
+  </form>
+</div>

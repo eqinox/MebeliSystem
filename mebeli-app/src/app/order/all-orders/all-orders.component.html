@@ -1,0 +1,61 @@
+<div id="searchBar">
+  <div class="">
+    <div class="field">
+      <input type="search" placeholder="Квартал" [(ngModel)]='query.neighborhood' (keyup)='onNeighborhoodChange()' />
+    </div>
+    <div class="field">
+      <input type="search" placeholder="Град" [(ngModel)]='query.city' (keyup)='onCityChange()' />
+    </div>
+    <div class="field">
+        <input type="search" placeholder="Име" [(ngModel)]='query.name' (keyup)='onNameChange()' />
+    </div>
+  </div>
+
+  <div id="searchDate">
+    <!-- <div id="searchDateFrom">
+      От
+      <div class="form-group">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                    name="dp" [(ngModel)]="query.dateFrom" ngbDatepicker #left="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="left.toggle()" type="button">
+                <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+              </button>
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="searchDateTo" >
+      <div class="form-group" >
+        До
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                    name="dp" [(ngModel)]="query.dateTo" ngbDatepicker #right="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="right.toggle()" type="button">
+                <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+              </button>
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+  </div>
+</div>
+<ul>
+  <li [routerLink]="['/orders/' + order._id]" *ngFor='let order of orders | paginate: { itemsPerPage: itemsPerPage, currentPage: page }'>
+    <h3>
+      {{order.name}}
+    </h3>
+    <p>{{order.phone}}</p>
+    <p>Град: {{order.city}}</p>
+    <p>Квартал: {{order.neighborhood}}</p>
+    <p>Аванс: <b>{{order.deposit}}</b></p>
+    <span [ngClass]="markUnderline"><p>Крайна цена: <b>{{order.finalPrice}}</b></p></span>
+    <p>Дата: {{order.date | date: 'dd/MMM/yyyy'}}</p>
+  </li>
+</ul>
+
+<pagination-controls class="pagination-controls" (pageChange)='onPageChange($event)'></pagination-controls>

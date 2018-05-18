@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <li *ngIf='isLoggedIn()' routerLink='/orders/add'>
+      Добави поръчка
+    </li>
+    <li *ngIf='!isLoggedIn()' routerLink='/users/register'>
+      Регистрирай потребител
+    </li>
+    <li *ngIf='!isLoggedIn()' routerLink='/users/login'>
+      Вход
+    </li>
+    <li *ngIf='isLoggedIn()' routerLink='/orders/all'>
+      Всички поръчки
+    </li>
+    <li *ngIf='isLoggedIn()' routerLink='/users/logout' (click)='logOutUser()'>
+      Излез
+    </li>
+  </ul>
+</nav>
